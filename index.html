@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neo Business Solutions — Innovation. Intelligence. Impact.</title>
+  <meta name="description" content="Neo Business Solutions: software engineering, AI & automation, resource augmentation and strategic management consulting." />
+
+  <!-- Fonts + Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind (prototype CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --bg:#FBFBFD;
+      --muted:#6B7280;
+      --lead:#111827;
+      --accent:#ff6a00;
+      --card: rgba(255,255,255,0.75);
+    }
+
+    html,body{height:100%;}
+    body{font-family:'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:var(--lead); -webkit-font-smoothing:antialiased}
+
+    /* glass card */
+    .glass{background:var(--card);backdrop-filter:blur(8px);border-radius:16px;padding:1.5rem;box-shadow:0 10px 30px rgba(16,24,40,0.06);border:1px solid rgba(16,24,40,0.04)}
+
+    /* reveal */
+    [data-animate]{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s cubic-bezier(.2,.9,.3,1)}
+    [data-animate].visible{opacity:1;transform:none}
+
+    /* headings */
+    .section-title{font-weight:700;font-size:2rem}
+    .subtle{color:var(--muted)}
+
+    /* hero overlay */
+    .hero-overlay{background:linear-gradient(rgba(255,255,255,0.82), rgba(255,255,255,0.82));backdrop-filter:blur(6px)}
+
+    /* CTA bar */
+    .cta-stick{position:fixed;bottom:1.25rem;left:50%;transform:translateX(-50%);z-index:60}
+
+    /* responsive tweaks */
+    @media (min-width:1024px){.section-title{font-size:2.5rem}}
+  </style>
+</head>
+<body>
+
+  <a class="sr-only" href="#main">Skip to content</a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <!-- SVG Logo -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="w-10 h-10 text-orange-500" aria-hidden>
+          <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" stroke-width="4"/>
+          <path d="M20 44V20l24 24V20" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div>
+          <div class="text-lg font-semibold">Neo Business Solutions</div>
+          <div class="text-xs subtle">Innovation · Intelligence · Impact</div>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation" class="hidden lg:flex items-center gap-8 text-sm subtle">
+        <a href="#services" class="hover:text-black">Capabilities</a>
+        <a href="#industries" class="hover:text-black">Industries</a>
+        <a href="#case-studies" class="hover:text-black">Case Studies</a>
+        <a href="#resources" class="hover:text-black">Resources</a>
+        <a href="#contact" class="hover:text-black">Contact</a>
+      </nav>
+
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="tel:+919426354639" class="text-sm subtle">+91 94263 54639</a>
+        <a href="#contact" class="px-4 py-2 rounded-md glass font-medium">Book a Strategy Call</a>
+      </div>
+
+      <!-- mobile menu button -->
+      <button id="menuBtn" class="lg:hidden p-2 rounded-md" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+
+    <!-- mobile menu (hidden by default) -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-white/10 bg-white/80 backdrop-blur-sm">
+      <div class="px-6 py-4 flex flex-col gap-3">
+        <a href="#services">Capabilities</a>
+        <a href="#industries">Industries</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="relative min-h-[78vh] flex items-center" style="background-image:url('./images/hero-bg.jpg'); background-size:cover; background-position:center;">
+      <div class="absolute inset-0 hero-overlay"></div>
+      <div class="relative z-10 max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-sm subtle font-semibold">Trusted partner for technology & talent</p>
+          <h1 class="mt-4 text-4xl lg:text-5xl font-extrabold leading-tight">Future-proof your business with technology-led strategy and scalable teams.</h1>
+          <p class="mt-6 text-lg subtle max-w-2xl">Neo Business Solutions combines expert engineering, AI-enabled automation, and strategic management consulting to accelerate value, reduce risk, and build resilient organizations.</p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#contact" class="px-5 py-3 rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-semibold shadow-lg">Start a Conversation</a>
+            <a href="#case-studies" class="px-5 py-3 rounded-full border border-white/10 glass text-sm">See Case Studies</a>
+          </div>
+
+          <div class="mt-8 grid grid-cols-3 gap-4 max-w-md">
+            <div class="glass text-center p-3">
+              <div class="text-2xl font-bold">18+</div>
+              <div class="text-xs subtle">Years experience</div>
+            </div>
+            <div class="glass text-center p-3">
+              <div class="text-2xl font-bold">300+</div>
+              <div class="text-xs subtle">Clients served</div>
+            </div>
+            <div class="glass text-center p-3">
+              <div class="text-2xl font-bold">70000+</div>
+              <div class="text-xs subtle">People placed</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="glass">
+            <h3 class="text-lg font-semibold">Quick Snapshot</h3>
+            <p class="subtle mt-2">A single pane dashboard for transformation KPIs — automation savings, velocity, and risk metrics.</p>
+            <div class="mt-4 grid grid-cols-2 gap-3">
+              <div class="p-3 rounded-lg bg-white/80">Time to value<br/><strong>6 months</strong></div>
+              <div class="p-3 rounded-lg bg-white/80">Avg Automation ROI<br/><strong>18%</strong></div>
+            </div>
+            <div class="mt-4 text-right">
+              <a href="#resources" class="text-sm subtle">Download deck →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section id="services" class="py-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="section-title text-center">What We Do</h2>
+        <p class="subtle text-center mt-2 max-w-2xl mx-auto">End-to-end delivery: product engineering, AI & automation, process redesign, and expert resource management.</p>
+
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article class="glass" data-animate>
+            <div class="flex items-start gap-4">
+              <div class="rounded-lg p-3 bg-white/60"><i data-lucide="code" class="w-6 h-6 text-orange-500"></i></div>
+              <div>
+                <h3 class="font-semibold">Custom Software Development</h3>
+                <p class="subtle mt-2">Product-first engineering, microservices, APIs, mobile apps, and enterprise platforms built to scale.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass" data-animate>
+            <div class="flex items-start gap-4">
+              <div class="rounded-lg p-3 bg-white/60"><i data-lucide="cpu" class="w-6 h-6 text-orange-500"></i></div>
+              <div>
+                <h3 class="font-semibold">AI & Automation</h3>
+                <p class="subtle mt-2">Responsible AI, MLOps, RPA and intelligent workflows to reduce cost and improve decisioning.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass" data-animate>
+            <div class="flex items-start gap-4">
+              <div class="rounded-lg p-3 bg-white/60"><i data-lucide="settings" class="w-6 h-6 text-orange-500"></i></div>
+              <div>
+                <h3 class="font-semibold">Business Process Optimization</h3>
+                <p class="subtle mt-2">Lean processes, KPI-driven operations and automation-first redesign to boost throughput.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass" data-animate>
+            <div class="flex items-start gap-4">
+              <div class="rounded-lg p-3 bg-white/60"><i data-lucide="users" class="w-6 h-6 text-orange-500"></i></div>
+              <div>
+                <h3 class="font-semibold">Resource Augmentation & Management</h3>
+                <p class="subtle mt-2">Flexible access to senior engineers, architects, and program managers for all project phases.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass" data-animate>
+            <div class="flex items-start gap-4">
+              <div class="rounded-lg p-3 bg-white/60"><i data-lucide="briefcase" class="w-6 h-6 text-orange-500"></i></div>
+              <div>
+                <h3 class="font-semibold">Strategic Management Consulting</h3>
+                <p class="subtle mt-2">Operating models, governance, change & leadership advisory to align tech with business goals.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass" data-animate>
+            <div class="flex items-start gap-4">
+              <div class="rounded-lg p-3 bg-white/60"><i data-lucide="shield" class="w-6 h-6 text-orange-500"></i></div>
+              <div>
+                <h3 class="font-semibold">Security & Compliance</h3>
+                <p class="subtle mt-2">Security-by-design, audits, and privacy engineering for regulated industries.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industries (detailed) -->
+    <section id="industries" class="py-20 bg-[#F9FAFB]">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="section-title text-center">Industries We Empower</h2>
+        <p class="subtle text-center mt-2 max-w-2xl mx-auto">Deep domain experience across enterprise, regulated sectors and fast-moving startups.</p>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-3">
+          <div>
+            <h3 class="font-semibold mb-4">Technology & Digital</h3>
+            <div class="grid gap-4">
+              <div class="glass p-4 flex items-start gap-4" data-animate>
+                <i data-lucide="bank" class="w-6 h-6 text-orange-500 mt-1"></i>
+                <div>
+                  <div class="font-semibold">Fintech</div>
+                  <div class="subtle text-sm">Payments, banking platforms, risk & compliance tooling.</div>
+                </div>
+              </div>
+
+              <div class="glass p-4 flex items-start gap-4" data-animate>
+                <i data-lucide="cpu" class="w-6 h-6 text-orange-500 mt-1"></i>
+                <div>
+                  <div class="font-semibold">Telecom & Cloud</div>
+                  <div class="subtle text-sm">Cloud architecture, 5G enablement & edge solutions.</div>
+                </div>
+              </div>
+
+              <div class="glass p-4 flex items-start gap-4" data-animate>
+                <i data-lucide="shield" class="w-6 h-6 text-orange-500 mt-1"></i>
+                <div>
+                  <div class="font-semibold">Cybersecurity</div>
+                  <div class="subtle text-sm">Threat detection, secure SDLC and compliance programs.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-semibold mb-4">Business & Operations</h3>
+            <div class="grid gap-4">
+              <div class="glass p-4 flex items-start gap-4" data-animate>
+                <i data-lucide="shopping-cart" class="w-6 h-6 text-orange-500 mt-1"></i>
+                <div>
+                  <div class="font-semibold">Retail & eCommerce</div>
+                  <div class="subtle text-sm">Omnichannel commerce and personalized CX.</div>
+                </div>
+              </div>
+
+              <div class="glass p-4 flex items-start gap-4" data-animate>
+                <i data-lucide="truck" class="w-6 h-6 text-orange-500 mt-1"></i>
+                <div>
+                  <div class="font-semibold">Logistics & Supply Chain</div>
+                  <div class="subtle text-sm">Route optimization, warehouse automation and visibility platforms.</div>
+                </div>
+              </div>
+
+              <div class="glass p-4 flex items-start gap-4" data-animate>
+                <i data-lucide="factory" class="w-6 h-6 text-orange-500 mt-1"></i>
+                <div>
+                  <div class="font-semibold">Manufacturing</div>
+                  <div class="subtle text-sm">Smart factories, predictive maintenance and IIoT.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-semibold mb-4">People, Health & Growth</h3>
+            <div class="grid gap-4">
+              <div class="glass p-4 flex items-start gap-4" data-animate>
+                <i data-lucide="heart-pulse" class="w-6 h-6 text-orange-500 mt-1"></i>
+                <div>
+                  <div class="font-semibold">Healthcare & MedTech</div>
+                  <div class="subtle text-sm">Telehealth, EHR integration and clinical intelligence.</div>
+                </div>
+              </div>
+
+              <div class="glass p-4 flex items-start gap-4" data-animate>
+                <i data-lucide="graduation-cap" class="w-6 h-6 text-orange-500 mt-1"></i>
+                <div>
+                  <div class="font-semibold">Education & EdTech</div>
+                  <div class="subtle text-sm">Adaptive learning platforms and digital classrooms.</div>
+                </div>
+              </div>
+
+              <div class="glass p-4 flex items-start gap-4" data-animate>
+                <i data-lucide="user-plus" class="w-6 h-6 text-orange-500 mt-1"></i>
+                <div>
+                  <div class="font-semibold">HR & Resource Services</div>
+                  <div class="subtle text-sm">Staff augmentation, RPO and workforce transformation.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Contact & Locations -->
+<section id="locations" class="py-20 bg-[#F5F5F7]">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center mb-12">Our Global Presence</h2>
+    <div class="grid md:grid-cols-2 gap-10">
+      
+      <!-- London -->
+      <div class="glass-card p-6">
+        <h3 class="text-2xl font-semibold mb-4">London Office</h3>
+        <p class="mb-2">123 Innovation Street,<br> Canary Wharf, London, UK</p>
+        <p class="mb-4">Email: <a href="mailto:london@neobusiness.com" class="underline">london@neobusiness.com</a></p>
+        <div class="rounded-xl overflow-hidden shadow-md">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19801.76320783712!2d-0.028330099999999998!3d51.5054594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876032d37da94cf%3A0x6fa3f03b1f2d7e03!2sCanary%20Wharf%2C%20London!5e0!3m2!1sen!2sin!4v1695132535335!5m2!1sen!2sin"
+            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Ahmedabad -->
+      <div class="glass-card p-6">
+        <h3 class="text-2xl font-semibold mb-4">Ahmedabad Office</h3>
+        <p class="mb-2">100, Premchand Nagar Road,<br> Bodakdev, Ahmedabad, India</p>
+        <p class="mb-4">Email: <a href="mailto:ahmedabad@neobusiness.com" class="underline">ahmedabad@neobusiness.com</a></p>
+        <div class="rounded-xl overflow-hidden shadow-md">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.5880462024825!2d72.499107!3d23.0372234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b44b1ad74a7%3A0x2c631b5f70e3f86!2sBodakdev%2C%20Ahmedabad%2C%20Gujarat%20380054!5e0!3m2!1sen!2sin!4v1695132711221!5m2!1sen!2sin"
+            width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <!-- Case Studies carousel (simple) -->
+    <section id="case-studies" class="py-20">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="section-title">Success Stories</h2>
+        <p class="subtle max-w-2xl mx-auto mt-2">Real outcomes: faster time-to-market, lower operating costs, and measurable business impact.</p>
+
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <article class="glass p-6" data-animate>
+            <h3 class="font-semibold">Fintech — Payments Modernization</h3>
+            <p class="subtle mt-2">Re-architected payments core, reduced latency by 60% and enabled new merchant integrations.</p>
+            <div class="mt-4 text-sm subtle">6 months · Engineering, Cloud, Compliance</div>
+          </article>
+
+          <article class="glass p-6" data-animate>
+            <h3 class="font-semibold">Healthcare — Telemedicine Platform</h3>
+            <p class="subtle mt-2">Built scalable telehealth platform with video, EHR sync and AI triage that improved access for remote clinics.</p>
+            <div class="mt-4 text-sm subtle">9 months · Product, AI, Integration</div>
+          </article>
+
+          <article class="glass p-6" data-animate>
+            <h3 class="font-semibold">Retail — Omnichannel Launch</h3>
+            <p class="subtle mt-2">Launched unified commerce system and personalization engine that increased conversion rates by 22%.</p>
+            <div class="mt-4 text-sm subtle">5 months · Platform, Data & CX</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources / downloads -->
+    <section id="resources" class="py-20 bg-[#F9FAFB]">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="section-title text-center">Resources</h2>
+        <p class="subtle text-center mt-2">Whitepapers, playbooks and templates you can use to accelerate transformation.</p>
+
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <div class="glass p-6" data-animate>
+            <h4 class="font-semibold">Cloud Migration Playbook</h4>
+            <p class="subtle mt-2">Checklist, migration patterns and cost-optimization strategies.</p>
+            <div class="mt-4"><a class="text-orange-500 text-sm" href="#">Download PDF →</a></div>
+          </div>
+
+          <div class="glass p-6" data-animate>
+            <h4 class="font-semibold">AI Readiness Guide</h4>
+            <p class="subtle mt-2">How to scope, pilot and scale ML initiatives across your org.</p>
+            <div class="mt-4"><a class="text-orange-500 text-sm" href="#">Download PDF →</a></div>
+          </div>
+
+          <div class="glass p-6" data-animate>
+            <h4 class="font-semibold">Resource Augmentation Model</h4>
+            <p class="subtle mt-2">Flexible staffing models and governance for distributed delivery.</p>
+            <div class="mt-4"><a class="text-orange-500 text-sm" href="#">Download PDF →</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <h3 class="section-title">What our clients say</h3>
+        <div class="mt-8 grid md:grid-cols-2 gap-6">
+          <blockquote class="glass p-6" data-animate>
+            <p class="italic">"Neo helped us replatform our payment stack — they delivered on time and the ROI was immediate."</p>
+            <div class="mt-4 font-semibold">CFO, Global Payments</div>
+          </blockquote>
+
+          <blockquote class="glass p-6" data-animate>
+            <p class="italic">"Their team augmented our engineering org and helped ship two major releases in under 3 months."</p>
+            <div class="mt-4 font-semibold">VP Engineering, SaaS Scaleup</div>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Lead form -->
+    <section id="contact" class="py-20 bg-[#F5F7FA]">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="section-title text-center">Get in touch</h2>
+        <p class="subtle text-center mt-2">Tell us about your priorities — we’ll propose a short plan and next steps.</p>
+
+        <form class="mt-8 grid gap-4" style="max-width:760px;margin:0 auto;">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <input aria-label="Name" placeholder="Full name" class="p-3 rounded-md border border-white/10" />
+            <input aria-label="Company" placeholder="Company" class="p-3 rounded-md border border-white/10" />
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <input aria-label="Email" placeholder="Email" class="p-3 rounded-md border border-white/10" />
+            <input aria-label="Phone" placeholder="Phone" class="p-3 rounded-md border border-white/10" />
+          </div>
+          <textarea aria-label="Message" placeholder="Brief project summary" rows="5" class="p-3 rounded-md border border-white/10"></textarea>
+          <div class="flex items-center justify-center gap-4">
+            <button type="submit" class="px-6 py-3 rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 text-white font-semibold">Request Proposal</button>
+            <a href="mailto:neoinfohub@gmail.com" class="text-sm subtle">Or email: neoinfohub@gmail.com</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating CTA -->
+  <div class="cta-stick">
+    <div class="flex items-center gap-4 bg-white/90 glass shadow-lg rounded-full px-5 py-2 border border-white/10">
+      <a href="mailto:neoinfohub@gmail.com" class="flex items-center gap-2 text-sm font-medium"><i data-lucide="mail" class="w-4 h-4"></i>Email</a>
+      <span class="w-px h-5 bg-gray-200"></span>
+      <a href="tel:+919426354639" class="flex items-center gap-2 text-sm font-medium"><i data-lucide="phone" class="w-4 h-4"></i>Call</a>
+      <span class="w-px h-5 bg-gray-200"></span>
+      <a href="#contact" class="flex items-center gap-2 text-sm font-medium bg-gradient-to-r from-orange-500 to-yellow-400 text-white px-3 py-2 rounded-full"><i data-lucide="message-square" class="w-4 h-4"></i>Let’s Talk</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="mt-16 border-t border-white/10 py-8">
+    <div class="max-w-7xl mx-auto px-6 text-center subtle">© <span id="year"></span> Neo Business Solutions. All rights reserved. Privacy · Terms</div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // mobile menu
+    document.getElementById('menuBtn').addEventListener('click', ()=>{
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    });
+
+    // lucide icons
+    lucide.createIcons();
+
+    // reveal on scroll
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, {threshold:0.12});
+    document.querySelectorAll('[data-animate]').forEach(el=>obs.observe(el));
+
+    // smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const href = a.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  </script>
+</body>
+</html>
